@@ -3,6 +3,9 @@ on:
     types: [opened,reopened]
 jobs:
   titlePrefixCheck:
+    permissions:
+      contents: read
+      issues : write
     runs-on: ubuntu-latest
     steps:
       - if: startsWith(github.event.issue.title, 'CALLGIRL-') != 'true'
